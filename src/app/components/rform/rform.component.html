@@ -1,0 +1,42 @@
+<p>rform works!</p>
+
+<div class="container">
+  <form action="" method="get" [formGroup]="contactform">
+    <div class="username">
+      <div class="firstname">
+        <div>
+          <label for="">First Name : </label>
+        </div>
+        <div class="split">
+          <input type="text" formControlName="firstname" />
+          <span *ngIf="fc.firstname.touched && fc.firstname.invalid">
+            Please fill first Name</span>
+        </div>
+      </div>
+      <div class="secondname">
+        <div>
+          <label for="">Second Name : </label>
+        </div>
+        <div class="split">
+          <input type="text" formControlName="secondname" />
+          <span *ngIf="fc.secondname.touched && fc.secondname.invalid">
+            Please fill Second Name</span>
+        </div>
+      </div>
+      <div class="number">
+        <div>
+          <label for="">Ph no : </label>
+        </div>
+        <div class="split">
+          <input type="text" formControlName="number" />
+          <span *ngIf="fc.number.touched && fc.number.invalid">
+            Please fill Phone number</span>
+        </div>
+      </div>
+    </div>
+    <div class="button" (click)="onSubmit()">
+      <label for="">click</label>
+      <input type="submit" />
+    </div>
+  </form>
+</div>

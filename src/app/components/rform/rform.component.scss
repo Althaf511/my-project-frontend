@@ -1,0 +1,22 @@
+.username {
+  display: flex;
+  width: 50%;
+  flex-direction: column;
+
+  div {
+    display: flex;
+    margin-bottom: 5px;
+
+    div {
+      width: 30%;
+    }
+  }
+
+  .split {
+    display: flex;
+    flex-direction: column;
+    span{
+        color: red;
+    }
+  }
+}

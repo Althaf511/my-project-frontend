@@ -1,0 +1,36 @@
+<table>
+
+  
+  <thead>
+   
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>English</th>
+      <th>Tamil</th>
+      <th>Science</th>
+      <th>Maths</th>
+      <th>Hindi</th>
+      <th>Total</th>
+      <th>Actions</th> <!-- New column for action buttons -->
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let student of students">
+      <td>{{ student.id }}</td>
+      <td>{{ student.name }}</td>
+      <td>{{ student.marks.english }}</td>
+      <td>{{ student.marks.tamil }}</td>
+      <td>{{ student.marks.science }}</td>
+      <td>{{ student.marks.maths }}</td>
+      <td>{{ student.marks.hindi }}</td>
+      <td>{{ student.marks.total }}</td>
+      <td>
+        <button >Edit</button>
+        <button >Delete</button>
+      </td> <!-- Buttons for edit and delete actions -->
+    </tr>
+  </tbody>
+</table>
+
+<button type="submit" (click)="onFetch()" >Student Details</button>

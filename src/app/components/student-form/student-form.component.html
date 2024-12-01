@@ -1,0 +1,63 @@
+<form [formGroup]="studentForm">
+  <!-- Student ID -->
+  <label for="id">Student ID:</label>
+  <input id="id" type="number" formControlName="id" />
+  <span *ngIf="studentForm.get('id')?.touched && studentForm.get('id')?.invalid">
+    Student ID is required.
+  </span>
+
+  
+
+<!-- Student Name -->
+<label for="name">Student Name:</label>
+<input id="name" type="text" formControlName="name" />
+<span *ngIf="studentForm.get('name')?.touched && studentForm.get('name')?.invalid">
+  <!-- Show if the name field is required -->
+  <span *ngIf="studentForm.get('name')?.errors?.['required']">Student name is required.</span>
+  
+  <!-- Show if the name contains invalid characters -->
+  <span *ngIf="studentForm.get('name')?.errors?.['pattern']">Name must contain only alphabets.</span>
+</span>
+
+
+  <!-- Marks Fields (Nested FormGroup) -->
+  <div formGroupName="marks">
+    <label for="english">English:</label>
+    <input id="english" formControlName="english" type="number" />
+    <span *ngIf="studentForm.get('marks.english')?.touched && studentForm.get('marks.english')?.invalid">
+      English mark is required and must be between 0 and 100.
+    </span>
+
+    <label for="tamil">Tamil:</label>
+    <input id="tamil" formControlName="tamil" type="number" />
+    <span *ngIf="studentForm.get('marks.tamil')?.touched && studentForm.get('marks.tamil')?.invalid">
+      Tamil mark is required and must be between 0 and 100.
+    </span>
+
+    <label for="science">Science:</label>
+    <input id="science" formControlName="science" type="number" />
+    <span *ngIf="studentForm.get('marks.science')?.touched && studentForm.get('marks.science')?.invalid">
+      Science mark is required and must be between 0 and 100.
+    </span>
+
+    <label for="maths">Maths:</label>
+    <input id="maths" formControlName="maths" type="number" />
+    <span *ngIf="studentForm.get('marks.maths')?.touched && studentForm.get('marks.maths')?.invalid">
+      Maths mark is required and must be between 0 and 100.
+    </span>
+
+    <label for="hindi">Hindi:</label>
+    <input id="hindi" formControlName="hindi" type="number" />
+    <span *ngIf="studentForm.get('marks.hindi')?.touched && studentForm.get('marks.hindi')?.invalid">
+      Hindi mark is required and must be between 0 and 100.
+    </span>
+
+    <!-- Total Marks (disabled field) -->
+    <label for="total">Total Marks:</label>
+    <input id="total" type="number" formControlName="total"  />
+  </div>
+
+  <!-- Submit Button -->
+  <button type="submit" (click)="onSubmit()" [disabled]="studentForm.invalid">Submit</button>
+  
+</form>

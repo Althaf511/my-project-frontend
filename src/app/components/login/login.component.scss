@@ -1,0 +1,96 @@
+$gradient-color-start: #4e9af1;
+$gradient-color-end: #b937f2;
+$input-border-color: #ccc;
+$background-color: #f0f0f0;
+$card-background-color: #ffffff;
+
+.container {
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; ;
+  background-color: $background-color;
+
+  .login {
+    width: 350px;
+    padding: 40px 30px;
+    background-color: $card-background-color;
+    border-radius: 15px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .username, .password {
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: $background-color;
+      width: 100%;
+      margin-bottom: 20px;
+
+      .label {
+        display: block;
+        margin-bottom: 8px;
+        font-size: 16px;
+        font-weight: bold;
+        color: #333;
+      }
+
+      input {
+        width: 100%;
+        padding: 12px 16px;
+        border-radius: 5px;
+        border: 1px solid $input-border-color;
+        font-size: 16px;
+        background-color: #f9f9f9;
+        transition: border-color 0.3s ease;
+
+        &:focus {
+          border-color: $gradient-color-start;
+          outline: none;
+        }
+      }
+    }
+
+    .button-group {
+      display: inline-flex; // Use Flexbox
+      justify-content: space-between; // Space the buttons apart
+      width: 100%; // Ensure it takes full width
+      margin-top: 20px; // Add some space above the button group
+    
+      button {
+        flex: 1; // Make buttons take equal space
+        margin: 0 5px; // Add space between buttons
+        padding: 12px; // Consistent padding for buttons
+        border-radius: 5px; // Match button style
+        border: none; // Remove border
+        font-size: 16px; // Font size for buttons
+        font-weight: bold; // Bold text
+    
+        &.signup {
+          background-image: linear-gradient(to right, $gradient-color-start, $gradient-color-end);
+          color: white;
+          transition: background-color 0.3s ease;
+    
+          &:hover {
+            background-image: linear-gradient(to right, $gradient-color-end, $gradient-color-start);
+          }
+        }
+    
+        &.login {
+          background-image: linear-gradient(to right, $gradient-color-start, $gradient-color-end);
+          color: white;
+          transition: background-color 0.3s ease;
+    
+          &:hover {
+            background-image: linear-gradient(to right, $gradient-color-end, $gradient-color-start);
+          }
+        }
+      }
+    }
+    
+  }
+}
